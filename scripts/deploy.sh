@@ -22,6 +22,8 @@ if [[ -n $(git status --porcelain) ]]; then
 fi
 
 TEMP_DIR=$(mktemp --directory)
+trap 'git switch "$ORIGINAL_BRANCH" 2>/dev/null || true; rm --recursive --force "$TEMP_DIR" 2>/dev/null || true' EXIT
+
 cp --recursive dist/. "$TEMP_DIR"
 
 if git ls-remote --exit-code --heads origin gh-pages > /dev/null 2>&1; then
@@ -33,7 +35,7 @@ else
   git switch --orphan gh-pages
 fi
 
-git rm --recursive --force .
+git rm -r --force --ignore-unmatch .
 cp --recursive "$TEMP_DIR"/. .
 git add --all
 
@@ -43,6 +45,3 @@ else
   git -c commit.gpgSign=false commit --no-verify --message="Deploy website"
   git push --set-upstream origin gh-pages
 fi
-
-git switch "$ORIGINAL_BRANCH"
-rm --recursive --force "$TEMP_DIR"
