@@ -1,0 +1,308 @@
+{
+  "name": "Awesome: Software development project",
+  "description": "Roadmap of an awesome project.",
+  "themeColor": "#3B82F6",
+  "milestones": [
+    {
+      "name": "v1.5",
+      "epics": [
+        {
+          "id": 1,
+          "name": "Fixes & Cleanup",
+          "start": "2026-01-05",
+          "duration": { "value": 3, "unit": "weeks" },
+          "tasks": [
+            {
+              "title": "Deprecate legacy breadcrumbs",
+              "roadmap_id": "T001"
+            },
+            {
+              "title": "Remove bulk action button",
+              "roadmap_id": "T002"
+            },
+            {
+              "title": "Fix legacy session persistency",
+              "roadmap_id": "T003"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "UX Improvements",
+          "start": "2026-01-12",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Confirmation dialogs",
+              "roadmap_id": "T004"
+            },
+            {
+              "title": "Wizard UX redesign",
+              "roadmap_id": "T005"
+            },
+            {
+              "title": "Email notifications",
+              "roadmap_id": "T006"
+            },
+            {
+              "title": "Empty state screens & illustrations",
+              "roadmap_id": "T007"
+            },
+            {
+              "title": "Archiving capability",
+              "roadmap_id": "T008"
+            },
+            {
+              "title": "Enhanced thumbnails",
+              "roadmap_id": "T009"
+            },
+            {
+              "title": "High-resolution preview",
+              "roadmap_id": "T010"
+            },
+            {
+              "title": "Multi-tenant bulk export feature",
+              "roadmap_id": "T011"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Partnership Integrations",
+          "start": "2026-02-01",
+          "duration": { "value": 2.5, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Partners workspace",
+              "roadmap_id": "T012"
+            },
+            {
+              "title": "Bulk import 1,000+ clients",
+              "roadmap_id": "T013"
+            },
+            {
+              "title": "Ads support",
+              "roadmap_id": "T014"
+            },
+            {
+              "title": "AI-generated documents",
+              "roadmap_id": "T015"
+            },
+            {
+              "title": "Real-time tracking",
+              "roadmap_id": "T016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "v2.0",
+      "epics": [
+        {
+          "id": 4,
+          "name": "Project Management",
+          "start": "2026-01-05",
+          "duration": { "value": 4, "unit": "weeks" },
+          "tasks": [
+            {
+              "title": "MVP functional scope definition",
+              "roadmap_id": "T017"
+            },
+            {
+              "title": "Backlog grooming & sprint breakdown",
+              "roadmap_id": "T018"
+            },
+            {
+              "title": "Technical architecture",
+              "roadmap_id": "T019"
+            },
+            {
+              "title": "Release roadmap",
+              "roadmap_id": "T020"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Data Modeling",
+          "start": "2026-04-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Core engine data model",
+              "roadmap_id": "T021"
+            },
+            {
+              "title": "Multi-tier organization",
+              "roadmap_id": "T022"
+            },
+            {
+              "title": "Workflow & lifecycle schema",
+              "roadmap_id": "T023"
+            },
+            {
+              "title": "Document & asset management schema",
+              "roadmap_id": "T024"
+            },
+            {
+              "title": "Product catalog & inventory models",
+              "roadmap_id": "T025"
+            },
+            {
+              "title": "Tracking tokens & analytics schema",
+              "roadmap_id": "T026"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Core Backend",
+          "start": "2026-04-15",
+          "duration": { "value": 2.5, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Python microservices architecture setup",
+              "roadmap_id": "T027"
+            },
+            {
+              "title": "Headless generation service",
+              "roadmap_id": "T028"
+            },
+            {
+              "title": "Automated CI/CD test pipeline",
+              "roadmap_id": "T029"
+            },
+            {
+              "title": "Staging environment & automated deployments",
+              "roadmap_id": "T030"
+            },
+            {
+              "title": "Dynamic links generation service",
+              "roadmap_id": "T031"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "UX Design",
+          "start": "2026-01-15",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Store manager portal user journey",
+              "roadmap_id": "T032"
+            },
+            {
+              "title": "Enterprise group admin journey & permissions",
+              "roadmap_id": "T033"
+            },
+            {
+              "title": "Supplier user journey",
+              "roadmap_id": "T034"
+            },
+            {
+              "title": "Design system & visual identity",
+              "roadmap_id": "T035"
+            },
+            {
+              "title": "Default layout templates",
+              "roadmap_id": "T036"
+            },
+            {
+              "title": "UI component library",
+              "roadmap_id": "T037"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Core MVP Implementation",
+          "start": "2026-05-01",
+          "duration": { "value": 6, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Main dashboard",
+              "roadmap_id": "T038"
+            },
+            {
+              "title": "Dynamic template engine",
+              "roadmap_id": "T039"
+            },
+            {
+              "title": "Document generator & export",
+              "roadmap_id": "T040"
+            },
+            {
+              "title": "Target audience & distribution lists",
+              "roadmap_id": "T041"
+            },
+            {
+              "title": "Live engagement metrics",
+              "roadmap_id": "T042"
+            },
+            {
+              "title": "CSV/API products bulk import",
+              "roadmap_id": "T043"
+            },
+            {
+              "title": "Centralized product catalog",
+              "roadmap_id": "T044"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Marketing & Sales",
+          "start": "2026-04-01",
+          "duration": { "value": 4, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Public marketing website",
+              "roadmap_id": "T045"
+            },
+            {
+              "title": "Brand assets, typography, logo",
+              "roadmap_id": "T046"
+            },
+            {
+              "title": "Sales demo environment",
+              "roadmap_id": "T047"
+            },
+            {
+              "title": "Marketing sales kits",
+              "roadmap_id": "T048"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Advanced Platform Features",
+          "start": "2026-09-01",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            {
+              "title": "Self-serve guided user onboarding",
+              "roadmap_id": "T049"
+            },
+            {
+              "title": "Stripe: billing & subscriptions",
+              "roadmap_id": "T050"
+            },
+            {
+              "title": "Automated demo account provisioning pool",
+              "roadmap_id": "T051"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Loyalty & Rewards Engine",
+          "start": "2026-11-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": []
+        }
+      ]
+    }
+  ]
+}

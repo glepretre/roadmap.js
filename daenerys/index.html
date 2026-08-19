@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+@layer roadmap-base{*{box-sizing:border-box}:root{--font-family:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;--bg-color:#f8fafc;--text-main:#1e293b;--text-muted:#64748b;--border-color:#e2e8f0;--header-bg:#fff;--header-title-color:#1e293b;--header-title-transform:none;--header-title-spacing:normal;--badge-bg:#f1f5f9;--badge-text:#64748b;--badge-strong:#0f172a;--badge-border:#e2e8f0;--container-bg:#fff;--container-shadow:0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;--milestone-bg:#f8fafc;--milestone-label-bg:#1e293b;--milestone-label-text:#fff;--epic-name-text:#334155;--epic-bar-shadow:0 2px 4px #0000001a;--epic-bar-border:1px solid #0000000d;--epic-bar-hover-filter:brightness(1.05);--epic-bar-hover-shadow:0 4px 6px #00000026;--marker-color:#cbd5e1;--marker-text:#64748b;--card-bg:#fff;--card-shadow:0 4px 6px -1px #0000001a;--card-id-bg:#fff3;--table-th-bg:#f8fafc;--table-th-text:#64748b;--table-td-border:#f1f5f9;--table-td-text:#334155;--table-tr-hover:#f8fafc;--section-border:#e2e8f0;--section-title:#1e293b;--section-badge-bg:#cbd5e1;--section-badge-text:#475569;--week-width:40px;--sidebar-width:350px;--ms-col-width:80px}body{font-family:var(--font-family);background-color:var(--bg-color);color:var(--text-main);margin:0;padding:20px;line-height:1.5}.container{background:var(--container-bg);max-width:100%;box-shadow:var(--container-shadow);border:1px solid var(--border-color);border-radius:0 0 12px 12px;margin-bottom:40px;overflow-x:auto}header{border-bottom:1px solid var(--border-color);background:var(--header-bg);border-radius:12px 12px 0 0;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:15px;padding:24px;display:flex}.last-updated{background:var(--badge-bg);color:var(--badge-text);border:1px solid var(--badge-border);border-radius:8px;align-items:center;padding:6px 12px;font-size:.85rem;font-weight:500;display:flex;box-shadow:inset 0 1px #ffffff1a}.last-updated strong{color:var(--badge-strong);margin-left:6px;font-weight:700}h1{color:var(--header-title-color);text-transform:var(--header-title-transform);letter-spacing:var(--header-title-spacing);margin:0;font-size:1.5rem;font-weight:700}.roadmap-grid{min-width:max-content;display:grid;position:relative}.timeline-header{background:var(--milestone-bg);border-bottom:1px solid var(--border-color);z-index:10;padding-top:25px;display:flex;position:sticky;top:0}.label-column{width:var(--sidebar-width);min-width:var(--sidebar-width);border-right:1px solid var(--border-color);background:var(--header-bg);align-items:center;padding:10px;font-weight:600;display:flex}.weeks-container{flex-grow:1;display:flex}.week-label{width:var(--week-width);text-align:center;color:var(--text-muted);border-right:1px dotted var(--border-color);flex-shrink:0;padding:10px 0;font-size:.75rem}.milestone-block{border-bottom:1px solid var(--border-color);display:flex}.milestone-label{width:var(--ms-col-width);min-width:var(--ms-col-width);background:var(--milestone-label-bg);border-right:1px solid var(--border-color);color:var(--milestone-label-text);text-align:center;writing-mode:vertical-lr;letter-spacing:.1em;text-transform:uppercase;justify-content:center;align-items:center;padding:10px;font-size:.9rem;font-weight:800;display:flex;transform:rotate(180deg)}.milestone-content{flex-direction:column;flex-grow:1;display:flex}.epic-row{border-bottom:1px solid var(--border-color);flex-grow:1;display:flex}.epic-row:last-child{border-bottom:none}.epic-name{width:calc(var(--sidebar-width) - var(--ms-col-width));min-width:calc(var(--sidebar-width) - var(--ms-col-width));border-right:1px solid var(--border-color);color:var(--epic-name-text);align-items:center;padding:15px 12px;font-size:.85rem;font-weight:600;display:flex}.epics-container{background-image:linear-gradient(to right, var(--border-color) 1px, transparent 1px);background-size:var(--week-width) 100%;flex-grow:1;min-height:60px;position:relative}.epic-bar{color:#fff;white-space:nowrap;text-overflow:ellipsis;height:34px;box-shadow:var(--epic-bar-shadow);cursor:pointer;z-index:2;border:var(--epic-bar-border);border-radius:8px;align-items:center;padding:0 12px;font-size:.8rem;font-weight:600;transition:all .2s;display:flex;position:absolute;top:calc(50% - 17px);overflow:hidden}.epic-bar:hover{filter:var(--epic-bar-hover-filter);box-shadow:var(--epic-bar-hover-shadow);z-index:5;transform:translateY(-2px)}.month-marker{border-left:2px solid var(--marker-color);pointer-events:none;z-index:1;position:absolute;top:0;bottom:0}.month-label{color:var(--marker-text);text-transform:uppercase;letter-spacing:.025em;white-space:nowrap;text-overflow:ellipsis;pointer-events:auto;max-width:calc(100% - 10px);font-size:.75rem;font-weight:700;position:absolute;top:-22px;left:5px;overflow:hidden}.legend{color:var(--text-muted);margin-top:10px;margin-bottom:40px;padding:0 10px;font-size:.85rem;font-style:italic}.epics-details{grid-template-columns:repeat(auto-fill,minmax(450px,1fr));gap:24px;margin-top:40px;display:grid}.epic-card{background:var(--card-bg);border:1px solid var(--border-color);box-shadow:var(--card-shadow);border-radius:12px;flex-direction:column;display:flex;overflow:hidden}.epic-card-header{color:#fff;text-transform:uppercase;letter-spacing:1px;justify-content:space-between;align-items:center;padding:16px 20px;font-weight:700;display:flex}.epic-card-id{background:var(--card-id-bg);text-transform:uppercase;border-radius:4px;padding:2px 8px;font-size:.75rem}.epic-card-body{flex-grow:1;padding:0}.task-table{border-collapse:collapse;width:100%;font-size:.9rem}.task-table th{text-align:left;background:var(--table-th-bg);color:var(--table-th-text);text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border-color);padding:12px 20px;font-size:.75rem;font-weight:600}.task-table td{border-bottom:1px solid var(--table-td-border);color:var(--table-td-text);padding:12px 20px}.task-table tr:last-child td{border-bottom:none}.task-table tr:hover{background-color:var(--table-tr-hover)}.task-id{color:var(--text-muted);width:60px;font-family:monospace;font-size:.8rem;font-weight:600}.empty-tasks{text-align:center;color:var(--text-muted);padding:20px;font-size:.85rem;font-style:italic}.milestone-header-section{border-bottom:2px solid var(--section-border);align-items:center;gap:15px;margin-top:50px;margin-bottom:20px;padding-bottom:10px;display:flex}.milestone-header-section h2{color:var(--section-title);text-transform:uppercase;letter-spacing:1px;margin:0}.milestone-header-badge{background:var(--section-badge-bg);color:var(--section-badge-text);border-radius:99px;padding:4px 12px;font-size:.8rem;font-weight:700}@media (width<=768px){.epics-details{grid-template-columns:1fr}}}
+/*$vite$:1*/
+    </style>
+    <script>
+(function(e,t){typeof exports==`object`&&typeof module<`u`?t(exports):typeof define==`function`&&define.amd?define([`exports`],t):(e=typeof globalThis<`u`?globalThis:e||self,t(e.RoadmapGen={}))})(this,function(e){Object.defineProperty(e,Symbol.toStringTag,{value:`Module`}),e.Roadmap=class{constructor(e){this.config=e,this.data=e.data,this.epicColors=e.epicColors||{},this.mountPoint=typeof e.mountPoint==`string`?document.querySelector(e.mountPoint):e.mountPoint||document.body,this.locale=e.locale||`en-US`,this.monthFormat=e.monthFormat||`short`;let t={weekPrefix:`W`,weekOf:`Week of`,labelColumn:`Milestones / Epics`,durationWeeks:`weeks`,durationMonths:`months`,epicsCount:`EPICS`,idLabel:`ID`,taskLabel:`Task`,emptyTasks:`No tasks defined for this EPIC.`,startPrefix:`Start:`,durationPrefix:`Duration:`,epicPrefix:`EPIC`,lastUpdated:`Last Updated`,legend:`This roadmap is a living document used for project planning and tracking. Estimates are based on current knowledge and are subject to change as development progresses.`};this.translations={...t,...e.translations||{}}}renderSkeleton(){this.mountPoint.innerHTML=`
+            <header>
+                <h1 id="roadmap-title">Loading...</h1>
+                <div class="last-updated">${this.translations.lastUpdated} : <strong>${this.config.lastUpdated||``}</strong></div>
+            </header>
+            <div class="container">
+                <div id="roadmap" class="roadmap-grid"></div>
+            </div>
+            <div class="legend">${this.translations.legend||``}</div>
+            <div id="epics-details-container" class="epics-details"></div>
+        `,this.titleElement=this.mountPoint.querySelector(`#roadmap-title`),this.roadmapContainer=this.mountPoint.querySelector(`#roadmap`),this.detailsContainer=this.mountPoint.querySelector(`#epics-details-container`)}init(){this.renderSkeleton(),this.titleElement&&this.data.name&&(this.titleElement.textContent=this.data.name);let e=null,t=null,n=this.data.milestones.flatMap(e=>e.epics||[]);if(n.length===0)return;n.forEach(n=>{let r=new Date(n.start);(!e||r<e)&&(e=new Date(r));let i=n.duration.value;n.duration.unit===`months`&&(i*=4.345);let a=new Date(r);a.setDate(a.getDate()+i*7),(!t||a>t)&&(t=new Date(a))});let r=e.getDay(),i=e.getDate()-(r===0?6:r-1);e.setDate(i),e.setHours(0,0,0,0);let a=Math.ceil((t-e)/6048e5);this.roadmapContainer&&(this.roadmapContainer.innerHTML=``,this.renderTimeline(e,a),this.renderData(e)),this.detailsContainer&&(this.detailsContainer.innerHTML=``,this.renderEpicTables())}getISOWeek(e){let t=new Date(Date.UTC(e.getFullYear(),e.getMonth(),e.getDate())),n=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-n);let r=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-r)/864e5+1)/7)}renderTimeline(e,t){let n=document.createElement(`div`);n.className=`timeline-header`;let r=document.createElement(`div`);r.className=`label-column`,r.textContent=this.translations.labelColumn,n.appendChild(r);let i=document.createElement(`div`);i.className=`weeks-container`,i.style.position=`relative`;let a=[],o=null;for(let n=0;n<t;n++){let t=new Date(e);if(t.setDate(t.getDate()+n*7),!o||o.month!==t.getMonth()){o&&(o.endWeek=n);let e=t.toLocaleDateString(this.locale,{month:this.monthFormat,year:`numeric`}).toUpperCase();o={month:t.getMonth(),startWeek:n,label:e},a.push(o)}let r=document.createElement(`div`);r.className=`week-label`,r.textContent=this.translations.weekPrefix+this.getISOWeek(t),r.title=this.translations.weekOf+` `+t.toLocaleDateString(this.locale),i.appendChild(r)}o&&(o.endWeek=t),a.forEach(e=>{let t=document.createElement(`div`);t.className=`month-marker`,t.style.left=e.startWeek*40+`px`,t.style.width=(e.endWeek-e.startWeek)*40+`px`,t.title=e.label;let n=document.createElement(`div`);n.className=`month-label`,n.textContent=e.label,n.title=e.label,t.appendChild(n),i.appendChild(t)}),n.appendChild(i),this.roadmapContainer.appendChild(n)}renderData(e){let t={weeks:this.translations.durationWeeks,months:this.translations.durationMonths};(this.data.milestones||[]).forEach(n=>{let r=document.createElement(`div`);r.className=`milestone-block`;let i=document.createElement(`div`);i.className=`milestone-label`,i.textContent=n.name,r.appendChild(i);let a=document.createElement(`div`);a.className=`milestone-content`,(n.epics||[]).forEach(n=>{let r=document.createElement(`div`);r.className=`epic-row`;let i=document.createElement(`div`);i.className=`epic-name`,i.textContent=`${this.translations.epicPrefix} ${n.id} - ${n.name}`,r.appendChild(i);let o=document.createElement(`div`);o.className=`epics-container`;let s=(new Date(n.start)-e)/6048e5,c=n.duration.value;n.duration.unit===`months`&&(c*=4.345);let l=document.createElement(`div`);l.className=`epic-bar`,l.style.left=s*40+`px`,l.style.width=c*40+`px`,l.textContent=n.name,l.style.backgroundColor=this.epicColors[n.id]||`#94a3b8`;let u=t[n.duration.unit]||n.duration.unit;l.title=`${this.translations.epicPrefix} ${n.id}: ${n.name}\n${this.translations.startPrefix} ${new Date(n.start).toLocaleDateString(this.locale)}\n${this.translations.durationPrefix} ${n.duration.value} ${u}`,o.appendChild(l),r.appendChild(o),a.appendChild(r)}),r.appendChild(a),this.roadmapContainer.appendChild(r)})}renderEpicTables(){this.detailsContainer&&(this.detailsContainer.style.display=`block`,(this.data.milestones||[]).forEach(e=>{let t=document.createElement(`div`);t.className=`milestone-section`;let n=document.createElement(`div`);n.className=`milestone-header-section`;let r=document.createElement(`h2`);r.textContent=e.name;let i=document.createElement(`span`);i.className=`milestone-header-badge`,i.textContent=`${(e.epics||[]).length} ${this.translations.epicsCount}`,n.appendChild(r),n.appendChild(i),t.appendChild(n);let a=document.createElement(`div`);a.className=`epics-details`,(e.epics||[]).forEach(e=>{let t=this.epicColors[e.id]||`#94a3b8`,n=document.createElement(`div`);n.className=`epic-card`;let r=document.createElement(`div`);r.className=`epic-card-header`,r.style.backgroundColor=t;let i=document.createElement(`span`);i.textContent=e.name;let o=document.createElement(`span`);o.className=`epic-card-id`,o.textContent=`${this.translations.epicPrefix} ${e.id}`,r.appendChild(i),r.appendChild(o),n.appendChild(r);let s=document.createElement(`div`);if(s.className=`epic-card-body`,e.tasks&&e.tasks.length>0){let t=document.createElement(`table`);t.className=`task-table`;let n=document.createElement(`thead`),r=document.createElement(`tr`),i=document.createElement(`th`);i.style.width=`60px`,i.textContent=this.translations.idLabel;let a=document.createElement(`th`);a.textContent=this.translations.taskLabel,r.appendChild(i),r.appendChild(a),n.appendChild(r),t.appendChild(n);let o=document.createElement(`tbody`);e.tasks.forEach(e=>{let t=document.createElement(`tr`),n=document.createElement(`td`);n.className=`task-id`,n.textContent=e.roadmap_id||e.id||``;let r=document.createElement(`td`);r.textContent=e.title,t.appendChild(n),t.appendChild(r),o.appendChild(t)}),t.appendChild(o),s.appendChild(t)}else{let e=document.createElement(`div`);e.className=`empty-tasks`,e.textContent=this.translations.emptyTasks,s.appendChild(e)}n.appendChild(s),a.appendChild(n)}),t.appendChild(a),this.detailsContainer.appendChild(t)}))}}});
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap: Daenerys Conquest of Westeros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --font-family: 'Cinzel', serif, 'Inter', -apple-system, sans-serif;
+            --bg-color: #1a1a1a;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+
+            --header-bg: #2d2d2d;
+            --header-title-color: #ef4444;
+            --header-title-transform: uppercase;
+            --header-title-spacing: 2px;
+
+            --badge-bg: #374151;
+            --badge-text: #d1d5db;
+            --badge-strong: #ef4444;
+            --badge-border: #374151;
+
+            --container-bg: #1f2937;
+            --container-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+            --milestone-bg: #111827;
+            --milestone-label-bg: #7f1d1d;
+
+            --epic-name-text: #d1d5db;
+            --epic-bar-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            --epic-bar-border: 1px solid rgba(255,255,255,0.1);
+            --epic-bar-hover-filter: brightness(1.2);
+            --epic-bar-hover-shadow: 0 6px 10px rgba(0,0,0,0.4);
+
+            --marker-color: #4b5563;
+            --marker-text: #9ca3af;
+
+            --card-bg: #1f2937;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            --card-id-bg: rgba(0, 0, 0, 0.3);
+
+            --table-th-bg: #111827;
+            --table-th-text: #9ca3af;
+            --table-td-border: #374151;
+            --table-td-text: #e5e7eb;
+            --table-tr-hover: #374151;
+
+            --section-border: #7f1d1d;
+            --section-title: #ef4444;
+            --section-badge-bg: #7f1d1d;
+            --section-badge-text: #ffffff;
+        }
+
+        h1 { font-size: 1.8rem; }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const Roadmap = window.RoadmapGen.Roadmap;
+
+        const epicColors = {
+            1: "#8B0000",
+            2: "#B22222",
+            3: "#FFD700",
+            4: "#000000",
+            5: "#A52A2A",
+            6: "#C0C0C0",
+            7: "#4682B4",
+            8: "#FF4500",
+            9: "#2F4F4F"
+        };
+
+        Promise.resolve({
+  "name": "Daenerys: The Re-conquest of Westeros",
+  "description": "Strategic campaign roadmap to take back the Iron Throne.",
+  "themeColor": "#000000",
+  "milestones": [
+    {
+      "name": "Essos & Preparation",
+      "epics": [
+        {
+          "id": 1,
+          "name": "Liberation of Slaver's Bay",
+          "start": "0298-01-01",
+          "duration": { "value": 6, "unit": "months" },
+          "tasks": [
+            { "title": "Acquiring the Unsullied in Astapor", "roadmap_id": "ESS01" },
+            { "title": "Siege of Yunkai", "roadmap_id": "ESS02" },
+            { "title": "Governance of Meereen", "roadmap_id": "ESS03" },
+            { "title": "Reopening the Fighting Pits", "roadmap_id": "ESS04" }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Uniting the Dothraki",
+          "start": "0298-07-01",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            { "title": "Capture by Khal Moro", "roadmap_id": "DOT01" },
+            { "title": "Burning of the Khals at Vaes Dothrak", "roadmap_id": "DOT02" },
+            { "title": "Securing the Great Grass Sea", "roadmap_id": "DOT03" }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Ironborn Alliance & Fleet",
+          "start": "0298-09-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Pact with Yara and Theon Greyjoy", "roadmap_id": "FLT01" },
+            { "title": "Repairing the Meereenese Fleet", "roadmap_id": "FLT02" },
+            { "title": "Setting sail for Westeros", "roadmap_id": "FLT03" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Landing & The War",
+      "epics": [
+        {
+          "id": 4,
+          "name": "Dragonstone Occupation",
+          "start": "0298-11-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Establishing the War Room", "roadmap_id": "WES01" },
+            { "title": "Mining Dragonglass", "roadmap_id": "WES02" },
+            { "title": "Summoning Jon Snow", "roadmap_id": "WES03" }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Battle of the Goldroad",
+          "start": "0299-01-01",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Ambushing the Lannister Army", "roadmap_id": "BAT01" },
+            { "title": "Dracarys: Field of Fire 2.0", "roadmap_id": "BAT02" },
+            { "title": "Execution of Randyll and Dickon Tarly", "roadmap_id": "BAT03" }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "The Northern Alliance",
+          "start": "0299-02-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Beyond the Wall Expedition", "roadmap_id": "NOR01" },
+            { "title": "Bending the Knee (Jon Snow)", "roadmap_id": "NOR02" },
+            { "title": "Truce at the Dragonpit", "roadmap_id": "NOR03" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final Conquest",
+      "epics": [
+        {
+          "id": 7,
+          "name": "The Long Night",
+          "start": "0299-04-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Defense of Winterfell", "roadmap_id": "WW01" },
+            { "title": "Defeating the Night King", "roadmap_id": "WW02" },
+            { "title": "Honoring the Fallen", "roadmap_id": "WW03" }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Siege of King's Landing",
+          "start": "0299-06-01",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Death of Rhaegal & Missandei", "roadmap_id": "KL01" },
+            { "title": "Destruction of the Iron Fleet", "roadmap_id": "KL02" },
+            { "title": "Burning the City", "roadmap_id": "KL03" }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "The Iron Throne",
+          "start": "0299-07-01",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Victory Speech", "roadmap_id": "END01" },
+            { "title": "Final Confrontation with Jon Snow", "roadmap_id": "END02" },
+            { "title": "Melting of the Throne", "roadmap_id": "END03" }
+          ]
+        }
+      ]
+    }
+  ]
+}).then(data => {
+                const roadmap = new Roadmap({
+                    mountPoint: '#app',
+                    data: data,
+                    epicColors: epicColors,
+                    lastUpdated: '297 AC',
+                    translations: {
+                        lastUpdated: 'Last Updated',
+                        legend: '* A roadmap is a projection of military and political strategy. It is subject to change based on weather, alliances, and dragon temperament.'
+                    }
+                });
+                roadmap.init();
+            });
+    </script>
+</body>
+</html>
