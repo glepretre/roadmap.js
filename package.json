@@ -1,7 +1,7 @@
 {
   "name": "roadmap.js",
   "version": "1.0.0",
-  "description": "A lightweight generator to create beautiful roadmaps from JSON or directory structures.",
+  "description": "A lightweight, dependency-free JavaScript library to generate beautiful web project roadmaps from simple JSON data.",
   "main": "dist/roadmap.umd.cjs",
   "module": "dist/roadmap.js",
   "files": [
