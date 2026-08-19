@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap: Daenerys Conquest of Westeros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --font-family: 'Cinzel', serif, 'Inter', -apple-system, sans-serif;
+            --bg-color: #1a1a1a;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+
+            --header-bg: #2d2d2d;
+            --header-title-color: #ef4444;
+            --header-title-transform: uppercase;
+            --header-title-spacing: 2px;
+
+            --badge-bg: #374151;
+            --badge-text: #d1d5db;
+            --badge-strong: #ef4444;
+            --badge-border: #374151;
+
+            --container-bg: #1f2937;
+            --container-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+            --milestone-bg: #111827;
+            --milestone-label-bg: #7f1d1d;
+
+            --epic-name-text: #d1d5db;
+            --epic-bar-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            --epic-bar-border: 1px solid rgba(255,255,255,0.1);
+            --epic-bar-hover-filter: brightness(1.2);
+            --epic-bar-hover-shadow: 0 6px 10px rgba(0,0,0,0.4);
+
+            --marker-color: #4b5563;
+            --marker-text: #9ca3af;
+
+            --card-bg: #1f2937;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            --card-id-bg: rgba(0, 0, 0, 0.3);
+
+            --table-th-bg: #111827;
+            --table-th-text: #9ca3af;
+            --table-td-border: #374151;
+            --table-td-text: #e5e7eb;
+            --table-tr-hover: #374151;
+
+            --section-border: #7f1d1d;
+            --section-title: #ef4444;
+            --section-badge-bg: #7f1d1d;
+            --section-badge-text: #ffffff;
+        }
+
+        h1 { font-size: 1.8rem; }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="module" id="app-script">
+        import { Roadmap } from '../../src/roadmap.js';
+
+        const epicColors = {
+            1: "#8B0000",
+            2: "#B22222",
+            3: "#FFD700",
+            4: "#000000",
+            5: "#A52A2A",
+            6: "#C0C0C0",
+            7: "#4682B4",
+            8: "#FF4500",
+            9: "#2F4F4F"
+        };
+
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const roadmap = new Roadmap({
+                    mountPoint: '#app',
+                    data: data,
+                    epicColors: epicColors,
+                    lastUpdated: '297 AC',
+                    translations: {
+                        lastUpdated: 'Last Updated',
+                        legend: '* A roadmap is a projection of military and political strategy. It is subject to change based on weather, alliances, and dragon temperament.'
+                    }
+                });
+                roadmap.init();
+            });
+    </script>
+</body>
+</html>

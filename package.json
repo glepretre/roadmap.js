@@ -1,0 +1,39 @@
+{
+  "name": "roadmap.js",
+  "version": "1.0.0",
+  "description": "A lightweight generator to create beautiful roadmaps from JSON or directory structures.",
+  "main": "dist/roadmap.umd.cjs",
+  "module": "dist/roadmap.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "node scripts/generate-indexes.js && vite",
+    "build": "vite build && node scripts/build-standalone.js",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glepretre/roadmap.js.git"
+  },
+  "keywords": [
+    "roadmap",
+    "generator",
+    "visualization",
+    "project-management",
+    "timeline"
+  ],
+  "author": "Gilles Lepretre",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/glepretre/roadmap.js/issues"
+  },
+  "homepage": "https://github.com/glepretre/roadmap.js#readme",
+  "devDependencies": {
+    "vite": "^8.2.1"
+  }
+}

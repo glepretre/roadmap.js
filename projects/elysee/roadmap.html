@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap : Jean Dupont 2027</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --font-family: 'Inter', -apple-system, sans-serif;
+            --title-font: 'Playfair Display', serif;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+
+            --header-bg: #002395; /* Bleu France */
+            --header-title-color: #ffffff;
+            --header-title-transform: none;
+            --header-title-spacing: 0.5px;
+
+            --badge-bg: #ffffff;
+            --badge-text: #002395;
+            --badge-strong: #ed2939; /* Rouge France */
+            --badge-border: #e2e8f0;
+
+            --container-bg: #ffffff;
+            --container-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+            --milestone-bg: #f1f5f9;
+            --milestone-label-bg: #002395;
+
+            --epic-name-text: #334155;
+            --epic-bar-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            --epic-bar-border: 1px solid rgba(0,0,0,0.05);
+            --epic-bar-hover-filter: brightness(1.05);
+            --epic-bar-hover-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+            --marker-color: #cbd5e1;
+            --marker-text: #94a3b8;
+
+            --card-bg: #ffffff;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --card-id-bg: #f1f5f9;
+
+            --table-th-bg: #f8fafc;
+            --table-th-text: #64748b;
+            --table-td-border: #e2e8f0;
+            --table-td-text: #1e293b;
+            --table-tr-hover: #f1f5f9;
+
+            --section-border: #ed2939;
+            --section-title: #002395;
+            --section-badge-bg: #ed2939;
+            --section-badge-text: #ffffff;
+        }
+
+        h1 {
+            font-family: var(--title-font);
+            font-size: 2.2rem;
+        }
+
+        .label-column {
+            color: #ffffff !important;
+        }
+
+        .epic-card-id {
+            color: var(--text-main) !important;
+        }
+
+        .france-flag {
+            display: flex;
+            height: 4px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .flag-blue { background: #002395; flex: 1; }
+        .flag-white { background: #ffffff; flex: 1; }
+        .flag-red { background: #ed2939; flex: 1; }
+    </style>
+</head>
+<body>
+    <div class="france-flag">
+        <div class="flag-blue"></div>
+        <div class="flag-white"></div>
+        <div class="flag-red"></div>
+    </div>
+    <div id="app"></div>
+
+    <script type="module" id="app-script">
+        import { Roadmap } from '../../src/roadmap.js';
+
+        const epicColors = {
+            1: "#002395", // Bleu
+            2: "#4169E1", // Royal Blue
+            3: "#ed2939", // Rouge
+            4: "#FF4D4D", // Light Red
+            5: "#002395", // Bleu
+            6: "#ed2939", // Rouge
+            7: "#FFD700"  // Or (Victoire)
+        };
+
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const roadmap = new Roadmap({
+                    mountPoint: '#app',
+                    data: data,
+                    locale: 'fr-FR',
+                    monthFormat: 'short',
+                    epicColors: epicColors,
+                    lastUpdated: '14 Juillet 2026',
+                    translations: {
+                        weekPrefix: 'S',
+                        weekOf: 'Semaine du',
+                        labelColumn: 'Étapes vers la Victoire',
+                        durationWeeks: 'semaines',
+                        durationMonths: 'mois',
+                        epicsCount: 'ACTIONS STRATÉGIQUES',
+                        idLabel: 'CODE',
+                        taskLabel: 'Objectif de Campagne',
+                        emptyTasks: 'Aucune action planifiée pour cette phase.',
+                        startPrefix: 'Lancement :',
+                        durationPrefix: 'Échéance :',
+                        epicPrefix: 'AXE',
+                        lastUpdated: 'Dernière mise à jour du QG',
+                        legend: '* Ce document est confidentiel et destiné à l\'état-major. La stratégie s\'adapte en temps réel à la volonté des Français et aux impératifs de la République.'
+                    }
+                });
+                roadmap.init();
+            });
+    </script>
+</body>
+</html>

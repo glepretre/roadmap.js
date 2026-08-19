@@ -1,0 +1,122 @@
+{
+  "name": "Daenerys: The Re-conquest of Westeros",
+  "description": "Strategic campaign roadmap to take back the Iron Throne.",
+  "themeColor": "#000000",
+  "milestones": [
+    {
+      "name": "Essos & Preparation",
+      "epics": [
+        {
+          "id": 1,
+          "name": "Liberation of Slaver's Bay",
+          "start": "0298-01-01",
+          "duration": { "value": 6, "unit": "months" },
+          "tasks": [
+            { "title": "Acquiring the Unsullied in Astapor", "roadmap_id": "ESS01" },
+            { "title": "Siege of Yunkai", "roadmap_id": "ESS02" },
+            { "title": "Governance of Meereen", "roadmap_id": "ESS03" },
+            { "title": "Reopening the Fighting Pits", "roadmap_id": "ESS04" }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Uniting the Dothraki",
+          "start": "0298-07-01",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            { "title": "Capture by Khal Moro", "roadmap_id": "DOT01" },
+            { "title": "Burning of the Khals at Vaes Dothrak", "roadmap_id": "DOT02" },
+            { "title": "Securing the Great Grass Sea", "roadmap_id": "DOT03" }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Ironborn Alliance & Fleet",
+          "start": "0298-09-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Pact with Yara and Theon Greyjoy", "roadmap_id": "FLT01" },
+            { "title": "Repairing the Meereenese Fleet", "roadmap_id": "FLT02" },
+            { "title": "Setting sail for Westeros", "roadmap_id": "FLT03" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Landing & The War",
+      "epics": [
+        {
+          "id": 4,
+          "name": "Dragonstone Occupation",
+          "start": "0298-11-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Establishing the War Room", "roadmap_id": "WES01" },
+            { "title": "Mining Dragonglass", "roadmap_id": "WES02" },
+            { "title": "Summoning Jon Snow", "roadmap_id": "WES03" }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Battle of the Goldroad",
+          "start": "0299-01-01",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Ambushing the Lannister Army", "roadmap_id": "BAT01" },
+            { "title": "Dracarys: Field of Fire 2.0", "roadmap_id": "BAT02" },
+            { "title": "Execution of Randyll and Dickon Tarly", "roadmap_id": "BAT03" }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "The Northern Alliance",
+          "start": "0299-02-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Beyond the Wall Expedition", "roadmap_id": "NOR01" },
+            { "title": "Bending the Knee (Jon Snow)", "roadmap_id": "NOR02" },
+            { "title": "Truce at the Dragonpit", "roadmap_id": "NOR03" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final Conquest",
+      "epics": [
+        {
+          "id": 7,
+          "name": "The Long Night",
+          "start": "0299-04-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Defense of Winterfell", "roadmap_id": "WW01" },
+            { "title": "Defeating the Night King", "roadmap_id": "WW02" },
+            { "title": "Honoring the Fallen", "roadmap_id": "WW03" }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Siege of King's Landing",
+          "start": "0299-06-01",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Death of Rhaegal & Missandei", "roadmap_id": "KL01" },
+            { "title": "Destruction of the Iron Fleet", "roadmap_id": "KL02" },
+            { "title": "Burning the City", "roadmap_id": "KL03" }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "The Iron Throne",
+          "start": "0299-07-01",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Victory Speech", "roadmap_id": "END01" },
+            { "title": "Final Confrontation with Jon Snow", "roadmap_id": "END02" },
+            { "title": "Melting of the Throne", "roadmap_id": "END03" }
+          ]
+        }
+      ]
+    }
+  ]
+}

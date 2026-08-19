@@ -1,0 +1,99 @@
+{
+  "name": "Élysée : Élections présidentielles 2027",
+  "description": "Feuille de route stratégique pour la victoire de Jean Dupont.",
+  "themeColor": "#002395",
+  "milestones": [
+    {
+      "name": "Des fondations solides",
+      "epics": [
+        {
+          "id": 1,
+          "name": "L'État-Major du Changement",
+          "start": "2026-09-01",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            { "title": "Recrutement du Directeur de Campagne et porte-paroles", "roadmap_id": "ORG01" },
+            { "title": "Inauguration du QG de campagne à Paris (Rive Gauche)", "roadmap_id": "ORG02" },
+            { "title": "Lancement officiel du mouvement 'Solide comme Dupont'", "roadmap_id": "ORG03" }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Le Projet pour la France",
+          "start": "2026-10-15",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            { "title": "Tour de France de l'écoute (Consultations citoyennes)", "roadmap_id": "PRJ01" },
+            { "title": "Rédaction du manifeste 'Traversons avec Dupont'", "roadmap_id": "PRJ02" },
+            { "title": "Audit et chiffrage budgétaire par des experts", "roadmap_id": "PRJ03" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L'Ancrage dans les territoires",
+      "epics": [
+        {
+          "id": 3,
+          "name": "La Course aux Signatures",
+          "start": "2027-01-01",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Tournée des maires ruraux pour les parrainages", "roadmap_id": "LEG01" },
+            { "title": "Validation des 500 signatures par le Conseil Constitutionnel", "roadmap_id": "LEG02" }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "L'Offensive Médiatique",
+          "start": "2027-01-15",
+          "duration": { "value": 3, "unit": "months" },
+          "tasks": [
+            { "title": "Premier Grand Meeting national au Zénith de Paris", "roadmap_id": "MED01" },
+            { "title": "Lancement de la stratégie d'influence (TikTok/Twitch)", "roadmap_id": "MED02" },
+            { "title": "Marathon des matinales radio et TV", "roadmap_id": "MED03" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "La route vers l'Élysée",
+      "epics": [
+        {
+          "id": 5,
+          "name": "Premier Tour (18 Avril)",
+          "start": "2027-03-20",
+          "duration": { "value": 1, "unit": "months" },
+          "tasks": [
+            { "title": "Diffusion des clips de campagne officielle", "roadmap_id": "STG01" },
+            { "title": "Grand Débat télévisé entre les 42 candidats", "roadmap_id": "STG02" },
+            { "title": "Qualification pour le second tour (Résultats du 18 avril)", "roadmap_id": "STG03" }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "L'Ultime Duel (2 Mai)",
+          "start": "2027-04-18",
+          "duration": { "value": 2, "unit": "weeks" },
+          "tasks": [
+            { "title": "Négociations et ralliements du 'Front Républicain'", "roadmap_id": "FIN01" },
+            { "title": "Le Grand Débat de l'entre-deux-tours", "roadmap_id": "FIN02" },
+            { "title": "Rassemblement final à Lyon", "roadmap_id": "FIN03" }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "L'Investiture",
+          "start": "2027-05-02",
+          "duration": { "value": 2, "unit": "months" },
+          "tasks": [
+            { "title": "Victoire au second tour (Soirée sur le pont Alexandre III)", "roadmap_id": "END01" },
+            { "title": "Cérémonie d'investiture au Palais de l'Élysée", "roadmap_id": "END02" },
+            { "title": "Nomination du Premier Ministre Jean Dupond", "roadmap_id": "END03" },
+            { "title": "Formation du premier Gouvernement Dupond", "roadmap_id": "END04" }
+          ]
+        }
+      ]
+    }
+  ]
+}
