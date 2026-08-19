@@ -4,8 +4,12 @@
 
 **Roadmap.js** is a lightweight, dependency-free JavaScript library to generate beautiful web project roadmaps from simple JSON data.
 
+## 🔗 **[Live Demo](https://glepretre.github.io/roadmap.js/)**
+
 <p align="center">
-  <img src="screenshots/0_index-gallery.png" alt="Roadmap.js Gallery" width="700">
+  <a href="https://glepretre.github.io/roadmap.js/">
+    <img src="screenshots/0_index-gallery.png" alt="Roadmap.js Gallery" width="700">
+  </a>
 </p>
 
 ## Features
