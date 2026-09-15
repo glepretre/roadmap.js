@@ -34,6 +34,9 @@ var e = class {
             </div>
             <div class="legend">${this.translations.legend || ""}</div>
             <div id="epics-details-container" class="epics-details"></div>
+            <footer class="roadmap-footer">
+                Powered by <a href="https://github.com/glepretre/roadmap.js" target="_blank" rel="noopener noreferrer"><b>Roadmap.js</b></a>
+            </footer>
         `, this.titleElement = this.mountPoint.querySelector("#roadmap-title"), this.roadmapContainer = this.mountPoint.querySelector("#roadmap"), this.detailsContainer = this.mountPoint.querySelector("#epics-details-container");
 	}
 	init() {
