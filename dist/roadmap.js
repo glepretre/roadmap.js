@@ -149,7 +149,9 @@ var e = class {
 					let o = document.createElement("tbody");
 					e.tasks.forEach((e) => {
 						let t = document.createElement("tr");
-						e.done === !0 && (t.className = "task-done");
+						e.done === !0 && (t.className = "task-done"), t.addEventListener("click", () => {
+							e.done = e.done !== !0, t.classList.toggle("task-done", e.done);
+						});
 						let n = document.createElement("td");
 						n.className = "task-id", n.textContent = e.roadmap_id || e.id || "";
 						let r = document.createElement("td");

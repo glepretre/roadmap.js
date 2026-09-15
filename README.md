@@ -117,6 +117,10 @@ The library expects a JSON object with the following structure:
 }
 ```
 
+### Interactive Task Completion
+
+Click a task row in an EPIC card to toggle its `done` state for the current page. Interactive changes are not persisted and a page refresh restores the values from the source JSON.
+
 ## Configuration
 
 | Option | Type | Default | Description |
