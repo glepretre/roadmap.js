@@ -12,8 +12,8 @@
           "start": "2026-09-01",
           "duration": { "value": 3, "unit": "months" },
           "tasks": [
-            { "title": "Recrutement du Directeur de Campagne et porte-paroles", "roadmap_id": "ORG01" },
-            { "title": "Inauguration du QG de campagne à Paris (Rive Gauche)", "roadmap_id": "ORG02" },
+            { "title": "Recrutement du Directeur de Campagne et porte-paroles", "roadmap_id": "ORG01", "done": true },
+            { "title": "Inauguration du QG de campagne à Paris (Rive Gauche)", "roadmap_id": "ORG02", "done": true },
             { "title": "Lancement officiel du mouvement 'Solide comme Dupont'", "roadmap_id": "ORG03" }
           ]
         },

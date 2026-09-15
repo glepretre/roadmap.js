@@ -52,8 +52,8 @@ const data = {
           start: "2026-07-01",
           duration: { value: 8, unit: "weeks" },
           tasks: [
-            { id: "T01", title: "Setup architecture" },
-            { id: "T02", title: "Implement parser" }
+            { id: "T01", title: "Setup architecture", done: true },
+            { id: "T02", title: "Implement parser", done: false }
           ]
         }
       ]
@@ -108,7 +108,7 @@ The library expects a JSON object with the following structure:
           "start": "YYYY-MM-DD",
           "duration": { "value": 4, "unit": "weeks" },
           "tasks": [
-            { "id": "T01", "title": "Task Description" }
+            { "id": "T01", "title": "Task Description", "done": false }
           ]
         }
       ]
@@ -116,6 +116,10 @@ The library expects a JSON object with the following structure:
   ]
 }
 ```
+
+### Interactive Task Completion
+
+Click a task row in an EPIC card to toggle its `done` state for the current page. Interactive changes are not persisted and a page refresh restores the values from the source JSON.
 
 ## Configuration
 

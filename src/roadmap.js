@@ -298,6 +298,11 @@ export class Roadmap {
                     const tbody = document.createElement('tbody');
                     epic.tasks.forEach(task => {
                         const tr = document.createElement('tr');
+                        if (task.done === true) tr.className = 'task-done';
+                        tr.addEventListener('click', () => {
+                            task.done = task.done !== true;
+                            tr.classList.toggle('task-done', task.done);
+                        });
                         
                         const tdId = document.createElement('td');
                         tdId.className = 'task-id';
