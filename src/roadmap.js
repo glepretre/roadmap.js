@@ -90,6 +90,7 @@ export class Roadmap {
             this.roadmapContainer.innerHTML = '';
             this.renderTimeline(minDate, totalWeeks);
             this.renderData(minDate);
+            this.renderCurrentDate(minDate, totalWeeks);
         }
         
         if (this.detailsContainer) {
@@ -226,6 +227,20 @@ export class Roadmap {
             block.appendChild(msContent);
             this.roadmapContainer.appendChild(block);
         });
+    }
+
+    renderCurrentDate(minDate, totalWeeks) {
+        const currentDate = new Date();
+        const toUtcDay = date => Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+        const elapsedDays = (toUtcDay(currentDate) - toUtcDay(minDate)) / (1000 * 60 * 60 * 24);
+
+        if (elapsedDays < 0 || elapsedDays >= totalWeeks * 7) return;
+
+        const marker = document.createElement('div');
+        marker.className = 'current-date-marker';
+        marker.style.left = `calc(var(--sidebar-width) + ${(elapsedDays / 7) * 40}px)`;
+
+        this.roadmapContainer.appendChild(marker);
     }
 
     renderEpicTables() {
