@@ -6,25 +6,6 @@ import { getProjects, generateIndexes } from './generate-indexes.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
-const footerHtml = `
-    <footer class="roadmap-footer">
-        Powered by <a href="https://github.com/glepretre/roadmap.js" target="_blank" rel="noopener noreferrer"><b>Roadmap.js</b></a>
-    </footer>`;
-const footerCss = `
-      .roadmap-footer {
-        padding: 1rem 1rem 0;
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        font-weight: 500;
-        text-align: center;
-      }
-      .roadmap-footer a {
-        color: var(--text-main);
-        text-decoration: none;
-      }
-      .roadmap-footer a:hover {
-        text-decoration: underline;
-      }`;
 
 function buildStandalone(project) {
     const distProjectDir = path.resolve(rootDir, 'dist', project);
@@ -46,7 +27,7 @@ function buildStandalone(project) {
     let html = fs.readFileSync(path.resolve(rootDir, 'projects', project, 'roadmap.html'), 'utf-8');
 
     const injection = `
-    <style>\n${libraryCss}\n${footerCss}\n    </style>
+    <style>\n${libraryCss}\n    </style>
     <script>\n${libraryJs}\n    </script>`;
 
     // Inject the library CSS and JS right after the <head> tag so client styles can override it
@@ -80,12 +61,6 @@ function buildStandalone(project) {
         
         // Replace the original module script with a standard script containing the modified content
         html = html.replace(scriptRegex, `<script>${scriptContent}</script>`);
-    }
-
-    if (html.includes('</body>')) {
-        html = html.replace('</body>', `${footerHtml}\n</body>`);
-    } else {
-        html += footerHtml;
     }
 
     fs.writeFileSync(path.resolve(distProjectDir, 'index.html'), html);
