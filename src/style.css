@@ -63,7 +63,7 @@
     background-color: var(--bg-color);
     color: var(--text-main);
     margin: 0;
-    padding: 20px;
+    padding: 1rem;
     line-height: 1.5;
   }
   .container {
