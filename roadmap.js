@@ -54,7 +54,7 @@ var e = class {
 		let r = e.getDay(), i = e.getDate() - (r === 0 ? 6 : r - 1);
 		e.setDate(i), e.setHours(0, 0, 0, 0);
 		let a = Math.ceil((t - e) / 6048e5);
-		this.roadmapContainer && (this.roadmapContainer.innerHTML = "", this.renderTimeline(e, a), this.renderData(e)), this.detailsContainer && (this.detailsContainer.innerHTML = "", this.renderEpicTables());
+		this.roadmapContainer && (this.roadmapContainer.innerHTML = "", this.renderTimeline(e, a), this.renderData(e), this.renderCurrentDate(e, a)), this.detailsContainer && (this.detailsContainer.innerHTML = "", this.renderEpicTables());
 	}
 	getISOWeek(e) {
 		let t = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate())), n = t.getUTCDay() || 7;
@@ -120,6 +120,12 @@ var e = class {
 				l.title = `${this.translations.epicPrefix} ${n.id}: ${n.name}\n${this.translations.startPrefix} ${new Date(n.start).toLocaleDateString(this.locale)}\n${this.translations.durationPrefix} ${n.duration.value} ${u}`, o.appendChild(l), r.appendChild(o), a.appendChild(r);
 			}), r.appendChild(a), this.roadmapContainer.appendChild(r);
 		});
+	}
+	renderCurrentDate(e, t) {
+		let n = /* @__PURE__ */ new Date(), r = (e) => Date.UTC(e.getFullYear(), e.getMonth(), e.getDate()), i = (r(n) - r(e)) / 864e5;
+		if (i < 0 || i >= t * 7) return;
+		let a = document.createElement("div");
+		a.className = "current-date-marker", a.style.left = `calc(var(--sidebar-width) + ${i / 7 * 40}px)`, this.roadmapContainer.appendChild(a);
 	}
 	renderEpicTables() {
 		this.detailsContainer && (this.detailsContainer.style.display = "block", (this.data.milestones || []).forEach((e) => {
