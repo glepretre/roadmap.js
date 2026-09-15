@@ -14,11 +14,13 @@
           "tasks": [
             {
               "title": "Deprecate legacy breadcrumbs",
-              "roadmap_id": "T001"
+              "roadmap_id": "T001",
+              "done": true
             },
             {
               "title": "Remove bulk action button",
-              "roadmap_id": "T002"
+              "roadmap_id": "T002",
+              "done": true
             },
             {
               "title": "Fix legacy session persistency",

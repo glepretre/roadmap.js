@@ -324,6 +324,9 @@
   .task-table tr:hover {
     background-color: var(--table-tr-hover);
   }
+  .task-table .task-done td {
+    text-decoration: line-through;
+  }
   .task-id {
     color: var(--text-muted);
     font-family: monospace;

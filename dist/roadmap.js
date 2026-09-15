@@ -148,7 +148,9 @@ var e = class {
 					a.textContent = this.translations.taskLabel, r.appendChild(i), r.appendChild(a), n.appendChild(r), t.appendChild(n);
 					let o = document.createElement("tbody");
 					e.tasks.forEach((e) => {
-						let t = document.createElement("tr"), n = document.createElement("td");
+						let t = document.createElement("tr");
+						e.done === !0 && (t.className = "task-done");
+						let n = document.createElement("td");
 						n.className = "task-id", n.textContent = e.roadmap_id || e.id || "";
 						let r = document.createElement("td");
 						r.textContent = e.title, t.appendChild(n), t.appendChild(r), o.appendChild(t);

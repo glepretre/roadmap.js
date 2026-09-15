@@ -12,8 +12,8 @@
           "start": "0298-01-01",
           "duration": { "value": 6, "unit": "months" },
           "tasks": [
-            { "title": "Acquiring the Unsullied in Astapor", "roadmap_id": "ESS01" },
-            { "title": "Siege of Yunkai", "roadmap_id": "ESS02" },
+            { "title": "Acquiring the Unsullied in Astapor", "roadmap_id": "ESS01", "done": true },
+            { "title": "Siege of Yunkai", "roadmap_id": "ESS02", "done": true },
             { "title": "Governance of Meereen", "roadmap_id": "ESS03" },
             { "title": "Reopening the Fighting Pits", "roadmap_id": "ESS04" }
           ]
