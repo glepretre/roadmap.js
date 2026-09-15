@@ -229,12 +229,16 @@ Releases are published to both GitHub and npm. The commands below require push a
    gh release create "v$VERSION" --generate-notes
    ```
 
-5. Publish to npm. The `prepublishOnly` script rebuilds the package before publishing:
+5. Export an npm access token, then publish. The project `.npmrc` reads it from
+   `NPM_TOKEN`, and the `prepublishOnly` script rebuilds the package before publishing:
 
    ```bash
-   npm login
+   read -rsp 'npm token: ' NPM_TOKEN && export NPM_TOKEN && printf '\n'
    npm publish
+   unset NPM_TOKEN
    ```
+
+   Do not store the token directly in `.npmrc` nor commit it to the repository.
 
 6. Deploy the gallery and standalone examples to GitHub Pages:
 
